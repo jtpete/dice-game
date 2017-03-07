@@ -1,0 +1,38 @@
+body{
+  background-color: #828081;
+}
+
+p{
+  margin: 0px;
+  font-family: Arial;
+  color: #e9c893;
+}
+
+.myBodyColor{
+  background-color: #3cc47c;
+  height: 200px;
+}
+
+.myHFColorFont{
+  background-color: #1E392a;
+  font-family: Arial;
+  color: #e9c893;
+}
+
+.LayoutFoot{
+  margin-top: 20px;
+  padding: 20px;
+}
+
+
+#logoHeader{
+  height: 75px;
+  width: 150px;
+  object-fit: contain;
+}
+
+#logoFooter{
+  height: 200px;
+  width: 250px;
+  object-fit: contain;
+}
