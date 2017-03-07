@@ -24,7 +24,58 @@ p{
   padding: 20px;
 }
 
+#hareImg{
+  height: 75px;
+  width: 75px;
+  object-fit: scale-down;
+}
 
+#tortImg{
+  height: 75px;
+  width: 75px;
+  object-fit: scale-down;
+}
+
+#resultsRow{
+  height: 300px;
+}
+
+.finishlineImg{
+  height: 75px;
+  width: 75px;
+  object-fit: scale-down;
+  float: right;
+}
+
+.die{
+  list-style-type: none;
+  padding-top: 10px;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+#results{
+  padding-top: 10px;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  display: block;
+  margin-left: 150px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px black;
+}
+
+.arrowImg{
+  width: 100px;
+  height: 200px;
+  object-fit: contain;
+}
 #logoHeader{
   height: 75px;
   width: 150px;
