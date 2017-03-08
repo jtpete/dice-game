@@ -8,9 +8,18 @@ p{
   color: #e9c893;
 }
 
+button:hover{
+  box-shadow: 5px 5px 10px black;
+}
+
+h4{
+  font-family: Arial;
+  font-size: 50px;
+  font-weight: bolder;
+}
 .myBodyColor{
   background-color: #3cc47c;
-  height: 200px;
+  height: 100px;
 }
 
 .myHFColorFont{
@@ -27,10 +36,6 @@ p{
 .LayoutFoot{
   margin-top: 20px;
   padding: 20px;
-}
-
-#arrowPic{
-
 }
 
 #hareImg{
@@ -53,23 +58,34 @@ p{
   height: 75px;
   width: 75px;
   object-fit: scale-down;
-  float: right;
 }
 
 .die{
   list-style-type: none;
   padding-top: 10px;
   text-align: center;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   background-color: white;
   display: inline-block;
   margin: 5px;
-  border: 1px solid black;
+  border: 2px solid black;
+}
+
+.resultError{
+  color: red;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.resultRoll{
+  color: #e9c893;
+  font-weight: bolder;
+  font-size: 100px;
 }
 
 #results{
-  padding-top: 75px;
+  padding-top: 25px;
   text-align: center;
   width: 200px;
   height: 200px;

@@ -33,7 +33,7 @@
         <ul class="myColorFont navbar-nav pull-right mr-auto">
           <li class="nav-item-right">
             <h1>Tortoise and Hare</h1>
-            <button class="colorFont" onclick="startArrowDirection()">PLAY</button>
+            <button class="colorFont" onclick="startGame()">PLAY</button>
           </li>
         </ul>
       </div>
@@ -52,25 +52,33 @@
         </div>
       </div>
 
+      <!--Hare Progress # -->
+      <div class="myBodyColor row">
+        <div class="col-md-10">
+          <h4 Id="hareProgress">0</h4>
+        </div>
+        <div class="col-md-2">
+          <h4>100</h4>
+        </div>
+      </div>
+
     <!--Dice Row -->
       <div id="resultsRow" class="myBodyColor row">
         <div class="col-md-3">
           <p>PICK DIE:</p>
-          <ul>
-            <li class="die">4</li>
-            <li class="die">6</li>
-            <li class="die">8</li>
-            <li class="die">10</li>
-            <li class="die">12</li>
-            <li class="die">20</li>
-          </ul>
+          <button id="4die" class="die colorFont" onclick="roll4()">4</button>
+          <button id="6die" class="die colorFont" onclick="roll6()">6</button>
+          <button id="8die" class="die colorFont" onclick="roll8()">8</button>
+          <button id="10die" class="die colorFont" onclick="roll10()">10</button>
+          <button id="12die" class="die colorFont" onclick="roll12()">12</button>
+          <button id="20die" class="die colorFont" onclick="roll20()">20</button>
         </div>
         <div class="col-md-6">
-          <p id="results">ROLL RESULTS</p>
+          <p id="results">Click Play</p>
 
         </div>
         <div class="col-md-3">
-          <p>TURN</p>
+          <p id="turnID">Click Play To See Who Begins</p>
           <img id="arrowPic" class="arrowImg" src="images/down.png" alt="arrow image"/>
         </div>
       </div>
@@ -82,6 +90,16 @@
       </div>
       <div class="col-md-2">
         <img class="finishlineImg" src="images/finishline.png" alt="hare image"/>
+      </div>
+    </div>
+
+    <!--Tortoise Progress # -->
+    <div class="myBodyColor row">
+      <div class="col-md-10">
+        <h4 Id="tortProgress">0</h4>
+      </div>
+      <div class="col-md-2">
+        <h4>100</h4>
       </div>
     </div>
 
