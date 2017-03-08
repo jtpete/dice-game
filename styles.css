@@ -19,9 +19,18 @@ p{
   color: #e9c893;
 }
 
+.colorFont{
+  font-family: Arial;
+  color: #e9c893;
+}
+
 .LayoutFoot{
   margin-top: 20px;
   padding: 20px;
+}
+
+#arrowPic{
+
 }
 
 #hareImg{
