@@ -19,7 +19,20 @@ h4{
 }
 .myBodyColor{
   background-color: #3cc47c;
+}
+
+.myBodyHeight{
   height: 100px;
+}
+
+.ruleCards{
+  margin: 10px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 10px black;
+}
+
+.mypowHeight{
+  height: 50px;
 }
 
 .myHFColorFont{
@@ -52,6 +65,21 @@ h4{
 
 #resultsRow{
   height: 300px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-top: 10px;
+
+}
+
+.rulesImage{
+  width: 318px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.rulesList{
+  display:  inline-flex;
+  list-style: none;
 }
 
 .finishlineImg{

@@ -25,10 +25,16 @@ function startPlayerScores(){
   document.getElementById("tortProgress").innerHTML = "0";
 }
 
+function startPlayerPowers(){
+  document.getElementById("harePower").innerHTML = "No Powers";
+  document.getElementById("tortPower").innerHTML = "No Powers";
+}
+
 function startGame(){
   startArrowDirection();
   startPlayerLocation();
   startPlayerScores();
+  startPlayerPowers();
   outputResult("Let's Begin", 1);
 }
 
@@ -118,7 +124,7 @@ function displayWinner(player){
     }
 }
 
-function applySpecialRolls(die, roll){
+function applyNegativeRolls(die, roll){
   var returnRoll = 1;
   if(die === 20){
     if(roll >= 14 && roll <= 17){
@@ -156,13 +162,72 @@ function applySpecialRolls(die, roll){
   return returnRoll;
 }
 
+function shockHare(){
+  var shockValue = -30;
+  var turnId = varifyTurn();
+  if (turnId === "T"){
+    toggleTurn(turnId);
+    movePlayer("H", shockValue);
+    document.getElementById("tortPower").innerHTML = "No Powers";
+  }
+}
+
+function shockTort(){
+  var shockValue = -30;
+  var turnId = varifyTurn();
+  if (turnId === "H"){
+    toggleTurn(turnId);
+    movePlayer("T", shockValue);
+    document.getElementById("harePower").innerHTML = "No Powers";
+  }
+}
+
+function applyPowerRolls(player, roll){
+  if (roll === 10 || roll === 13){
+    if(player === "H"){
+      if(document.getElementById("harePower").innerHTML === "No Powers"){
+        var buttonContainer = document.getElementById("harePower");
+        var newButton;
+        document.getElementById("harePower").innerHTML = "";
+        newButton = document.createElement("input");
+        newButton.type = "button";
+        newButton.value = "Electric Shock";
+        newButton.id = "hareShock";
+        newButton.onclick = shockTort;
+        newButton.style = "margin-left: 10px";
+        buttonContainer.appendChild(newButton);
+      }
+    }else{
+      if(document.getElementById("tortPower").innerHTML === "No Powers"){
+        var buttonContainer = document.getElementById("tortPower");
+        var newButton;
+        document.getElementById("tortPower").innerHTML = "";
+        newButton = document.createElement("input");
+        newButton.type = "button";
+        newButton.value = "Electric Shock";
+        newButton.id = "tortShock";
+        newButton.onclick = shockHare;
+        newButton.style = "margin-left: 10px";
+        buttonContainer.appendChild(newButton);
+      }
+    }
+  }
+}
+
+
+function applySpecialRolls(die, roll, player){
+  var returnRoll = applyNegativeRolls(die, roll);
+  applyPowerRolls(player, roll);
+  return returnRoll;
+}
+
 
 function roll4(){
     var turnId = varifyTurn();
     var dieUsed = 4;
     if (turnId != "C"){
       var numberRoll = rollDie(dieUsed);
-      numberRoll = applySpecialRolls(dieUsed, numberRoll);
+      numberRoll = applySpecialRolls(dieUsed, numberRoll, turnId);
       if (rollEqualsWin(turnId, numberRoll)){
         displayWinner(turnId);
       }else{
@@ -181,7 +246,7 @@ function roll6(){
     var dieUsed = 6;
     if (turnId != "C"){
       var numberRoll = rollDie(dieUsed);
-      numberRoll = applySpecialRolls(dieUsed, numberRoll);
+      numberRoll = applySpecialRolls(dieUsed, numberRoll, turnId);
       if (rollEqualsWin(turnId, numberRoll)){
         displayWinner(turnId);
       }else{
@@ -200,7 +265,7 @@ function roll8(){
     var dieUsed = 8;
     if (turnId != "C"){
       var numberRoll = rollDie(dieUsed);
-      numberRoll = applySpecialRolls(dieUsed, numberRoll);
+      numberRoll = applySpecialRolls(dieUsed, numberRoll, turnId);
       if (rollEqualsWin(turnId, numberRoll)){
         displayWinner(turnId);
       }else{
@@ -219,7 +284,7 @@ function roll10(){
     var dieUsed = 10;
     if (turnId != "C"){
       var numberRoll = rollDie(dieUsed);
-      numberRoll = applySpecialRolls(dieUsed, numberRoll);
+      numberRoll = applySpecialRolls(dieUsed, numberRoll, turnId);
       if (rollEqualsWin(turnId, numberRoll)){
         displayWinner(turnId);
       }else{
@@ -238,7 +303,7 @@ function roll12(){
     var dieUsed = 12;
     if (turnId != "C"){
       var numberRoll = rollDie(dieUsed);
-      numberRoll = applySpecialRolls(dieUsed, numberRoll);
+      numberRoll = applySpecialRolls(dieUsed, numberRoll, turnId);
       if (rollEqualsWin(turnId, numberRoll)){
         displayWinner(turnId);
       }else{
@@ -257,7 +322,7 @@ function roll20(){
     var dieUsed = 20;
     if (turnId != "C"){
       var numberRoll = rollDie(dieUsed);
-      numberRoll = applySpecialRolls(dieUsed, numberRoll);
+      numberRoll = applySpecialRolls(dieUsed, numberRoll, turnId);
       if (rollEqualsWin(turnId, numberRoll)){
         displayWinner(turnId);
       }else{
